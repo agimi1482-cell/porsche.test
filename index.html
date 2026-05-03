@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche 911 - Test Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(10, 10, 10, 0.95);
+            z-index: 1000;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(10,10,10,0.6), rgba(10,10,10,0.8));
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            color: #888;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 14px 40px;
+            border: 1px solid #444;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .gallery-section {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .section-line {
+            width: 50px;
+            height: 1px;
+            background: #444;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: brightness(0.8);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        .gallery-overlay span {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .info-section {
+            padding: 80px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .info-section h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            color: #888;
+            line-height: 2;
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                padding: 15px 20px;
+            }
+            .hero h1 {
+                letter-spacing: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Porsche</div>
+    </header>
+
+    <section class="hero">
+        <h1>911 Turbo</h1>
+        <p>Iconic. Timeless. Legendary.</p>
+        <a href="#gallery" class="btn">View Gallery</a>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <div class="section-header">
+            <h2>Gallery</h2>
+            <div class="section-line"></div>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="Porsche Wallpaper.jpeg" alt="Porsche 911 Side View">
+                <div class="gallery-overlay">
+                    <span>Side Profile</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder">PHOTO PLACEHOLDER</div>
+                <div class="gallery-overlay">
+                    <span>Front View</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder">PHOTO PLACEHOLDER</div>
+                <div class="gallery-overlay">
+                    <span>Interior</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder">PHOTO PLACEHOLDER</div>
+                <div class="gallery-overlay">
+                    <span>Rear View</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h3>About the 911</h3>
+        <p>The Porsche 911 is a sports car that has been in continuous production since 1963. Known for its distinctive rear-engine design and timeless silhouette, the 911 has become one of the most recognizable and celebrated automobiles in history.</p>
+    </section>
+
+    <footer>
+        <p>Test Website - Practice Project</p>
+    </footer>
+
+</body>
+</html>
